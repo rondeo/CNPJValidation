@@ -9,6 +9,7 @@ export class RedisService {
      return new Tedis({
         port: config.redis.port,
         host: config.redis.url,
+        password: config.redis.password,
       });
     }
     async getIncrementByMasterKey(client, key, productSkuId) {

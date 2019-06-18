@@ -6,3 +6,10 @@ Start app live reload
 CNPJ to use 06990590000123 *** Free for test ****
  - /sintegra/06990590000123
  - /cnpj/06990590000123
+
+
+
+
+ *** DOCKER RUN ****
+-docker-compose build
+-docker-compose  up
