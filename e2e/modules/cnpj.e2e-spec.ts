@@ -1,12 +1,11 @@
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import * as request from 'supertest';
-import { CnpjModule } from '../../src/Cnpj/Cnpj.module';
-import { CnpjService } from '../../src/Cnpj/Cnpj.service';
+import { CnpjModule } from '../../src/modules/cnpj/Cnpj.module';
+import { CnpjService } from '../../src/modules/cnpj/Cnpj.service';
 
 describe('Cnpj', () => {
   const cnpjService = { findAll: () => ['test'] };
-
   let app: INestApplication;
 
   beforeAll(async () => {
@@ -23,7 +22,7 @@ describe('Cnpj', () => {
 
   it(`/GET Cnpj`, () => {
     return request(app.getHttpServer())
-      .get('/Cnpj')
+      .get('/Cnpj/')
       .expect(200)
       .expect({
         data: cnpjService.findAll(),

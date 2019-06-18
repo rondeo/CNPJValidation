@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { cnpj } from './interfaces/cnpj.interface';
-import { HttpService } from '../common/services/http-service';
-import { config } from '../config';
-import { RedisService } from '../common/services/redis-service';
+import { HttpService } from '../../common/services/http-service';
+import { config } from '../../config';
+import { RedisService } from '../../common/services/redis-service';
 import { identifier } from '@babel/types';
 
 @Injectable()

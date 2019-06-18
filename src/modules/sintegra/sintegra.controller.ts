@@ -7,11 +7,11 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { RolesGuard } from '../common/guards/roles.guard';
-import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
-import { TransformInterceptor } from '../common/interceptors/transform.interceptor';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { LoggingInterceptor } from '../../common/interceptors/logging.interceptor';
+import { TransformInterceptor } from '../../common/interceptors/transform.interceptor';
 import { SintegraService } from './sintegra.service';
-import { CnpjValidationPipe } from '../common/pipes/cnpj-validation.pipe';
+import { CnpjValidationPipe } from '../../common/pipes/cnpj-validation.pipe';
 
 @Controller('sintegra')
 @UseGuards(RolesGuard)

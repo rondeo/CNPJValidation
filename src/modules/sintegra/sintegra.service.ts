@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { HttpService } from '../common/services/http-service';
-import { config } from '../config';
-import { RedisService } from '../common/services/redis-service';
+import { HttpService } from '../../common/services/http-service';
+import { config } from '../../config';
+import { RedisService } from '../../common/services/redis-service';
 
 @Injectable()
 export class SintegraService {

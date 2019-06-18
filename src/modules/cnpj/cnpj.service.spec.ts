@@ -4,8 +4,7 @@ import { CnpjService } from './cnpj.service';
 import { cnpj } from './interfaces/cnpj.interface';
 
 describe('CnpjController', () => {
-  let cnpjController: CnpjController;
-  // let cnpjService: CnpjService;
+  let cnpjService: CnpjService;
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
@@ -13,11 +12,10 @@ describe('CnpjController', () => {
       providers: [CnpjService],
     }).compile();
 
-    // cnpjService = module.get<CnpjService>(CnpjService);
-    cnpjController = module.get<CnpjController>(CnpjController);
+    cnpjService = module.get<CnpjService>(CnpjService);
   });
 
-  describe('findAll', () => {
+  describe('find', () => {
     it('should return an Cnpj', async () => {
       const result: cnpj[] = [
         {
@@ -26,9 +24,7 @@ describe('CnpjController', () => {
           name: 'Pixel',
         },
       ];
-      // jest.spyOn(cnpjService, 'findAll').mockImplementation(() => result);
-
-      expect(await cnpjController.findAll('32316159000106')).toBe(result);
+      expect(await cnpjService.find('32316159000106')).toBe(result);
     });
   });
 });
