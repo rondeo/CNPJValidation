@@ -20,6 +20,9 @@ export class RedisService {
     async addIncrementByMasterKey(client, key, productSkuId, value) {
     const incrementKey = `Incr.${key}-${productSkuId}`;
     await client.command('SET', incrementKey, JSON.stringify(value));
-    await client.command('EXPIRE', incrementKey, config.redis.minutesToExpire );
+
+    await client.command('EXPIRE', incrementKey, config.redis.minutesToExpire * 60 );
+
+    console.log(await client.command('TTL', incrementKey));
 }
 }
